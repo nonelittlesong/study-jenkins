@@ -13,5 +13,7 @@ docker pull jenkins/jenkins:lts
 ```
 运行，将数据目录从容器映射到主机：  
 ```
-docker run -d -p 49001:8080 -v $PWD/jenkins:/var/jenkins_home -t jenkins/jenkins
+docker run -d -p 49001:8080 -v $PWD/jenkins:/var/jenkins_home -t jenkins/jenkins:lts
 ```
+- `-d` - 在后台运行
+- `-p` - 端口映射。主机端口:容器端口。
