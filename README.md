@@ -21,3 +21,7 @@ docker run -d -p 49001:8080 -v $PWD/jenkins:/var/jenkins_home -t jenkins/jenkins
 ```diff
 - Error: Wrong volume permission.
 ```
+[解决方案](https://blog.csdn.net/babys/article/details/71170254):  
+```sh
+$ sudo chown -R 1000 $PWD/jenkins
+```
