@@ -17,3 +17,7 @@ docker run -d -p 49001:8080 -v $PWD/jenkins:/var/jenkins_home -t jenkins/jenkins
 ```
 - `-d` - 在后台运行
 - `-p` - 端口映射。主机端口:容器端口。
+
+```diff
+- Error: Wrong volume permission.
+```
