@@ -24,6 +24,27 @@ docker run -d -p 49001:8080 -v $PWD/jenkins:/var/jenkins_home -t jenkins/jenkins
 - Error: Wrong volume permission.
 ```
 [解决方案](https://blog.csdn.net/babys/article/details/71170254):  
+
+- [Installing Jenkins with Docker](https://wiki.jenkins.io/display/JENKINS/Installing+Jenkins+with+Docker)
+
 ```sh
-$ sudo chown -R 1000 $PWD/jenkins
+#!/bin/bash
+ 
+# Pull latest container
+docker pull jenkins
+ 
+# Setup local configuration folder
+# Should already be in a jenkins folder when running this script.
+export CONFIG_FOLDER=$PWD/config
+mkdir $CONFIG_FOLDER
+chown 1000 $CONFIG_FOLDER
+ 
+# Start container
+docker run --restart=always -d -p 49001:8080 \
+-v $CONFIG_FOLDER:/var/jenkins_home:z \
+# -e http_proxy='http://proxy.com:8080' \
+# -e https_proxy='http://proxy.com:8080' \
+--name jenkins -t jenkins
+ 
+docker logs --follow jenkins
 ```
