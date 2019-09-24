@@ -48,3 +48,6 @@ docker run --restart=always -d -p 49001:8080 \
  
 docker logs --follow jenkins
 ```
+
+>[--restart=always](https://www.cnblogs.com/kaishirenshi/p/10396446.html): 当 Docker 重启时，容器自动启动。  
+
