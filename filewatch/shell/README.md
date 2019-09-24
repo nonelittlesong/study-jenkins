@@ -1,5 +1,5 @@
 
-- [tail](https://www.runoob.com/linux/linux-comm-tail.html) - 输出文件最尾部。
+- [tail](https://www.runoob.com/linux/linux-comm-tail.html) - 输出文件最尾部。默认输出文件最后10行。
 
 ## tail
 ```sh
