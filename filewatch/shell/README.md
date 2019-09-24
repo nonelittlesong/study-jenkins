@@ -1,5 +1,5 @@
 
-- [tail](https://www.runoob.com/linux/linux-comm-tail.html) - 只能监听文件
+- [tail](https://www.runoob.com/linux/linux-comm-tail.html) - 输出文件最尾部。
 
 ## tail
 ```sh
