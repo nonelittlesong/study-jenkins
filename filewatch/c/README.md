@@ -3,3 +3,6 @@
 - [inotify < linux man page](http://man7.org/linux/man-pages/man7/inotify.7.html)
 - [inotify-tools](https://github.com/rvoicilas/inotify-tools)
 - [inotifywait](https://linux.die.net/man/1/inotifywait)
+- [rsync](https://rsync.samba.org/)
+- [sersync](https://github.com/wsgzao/sersync)
+
