@@ -10,7 +10,8 @@
    ```sh
    $ sudo usermod -aG docker $USER
    ```
-3. 更新
+3. 使用 docker 组
+   临时的，仍需重启。
    ```sh
    newgrp docker
    ```
