@@ -1,5 +1,6 @@
 
 - [docker docs](https://docs.docker.com/get-started/)
+- [krallin/tini](https://github.com/krallin/tini)
 
 ## docker 不 sudo
 1. 添加 docker 组
