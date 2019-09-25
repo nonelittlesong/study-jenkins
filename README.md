@@ -51,4 +51,4 @@ docker logs --follow jenkins
 ```
 
 >[--restart=always](https://www.cnblogs.com/kaishirenshi/p/10396446.html): 当 Docker 重启时，容器自动启动。  
-
+>在后面加上 `/bin/bash` 无法正常启动 jenkins。  
