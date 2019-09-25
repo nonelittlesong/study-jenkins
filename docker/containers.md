@@ -39,3 +39,5 @@ docker run username/repository:tag                                             #
 | -v | /host/volume:/container/volume | 绑定挂载数据卷。 |
 | --rm | | Automatically remove the container when it exits |
 
+- 有 `-i` 无 `-t` - 没有 伪 TTY，没有输出显示在终端。
+- 无 `-i` 有 `-t` - 无法从 stdin 获取输入。
