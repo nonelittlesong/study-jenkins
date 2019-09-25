@@ -41,3 +41,26 @@ docker run username/repository:tag                                             #
 
 - 有 `-i` 无 `-t` - 没有 伪 TTY，没有输出显示在终端。
 - 无 `-i` 有 `-t` - 无法从 stdin 获取输入。
+
+## exec & attach
+### exec
+Run a command in a running container  
+```
+docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+```
+>必须要有 container 和 command 两个参数。
+
+例子：  
+```
+docker exec -it 8f128708d691 /bin/bash
+```
+
+### attach
+Attach local standard input, output, and error streams to a running container  
+```
+docker attach [OPTIONS] CONTAINER
+```
+options:  
+- `--detach-keys string` - Override the key sequence for detaching a container
+- `--no-stdin` - Do not attach STDIN
+- `--sig-proxy` - Proxy all received signals to the process (default true)
