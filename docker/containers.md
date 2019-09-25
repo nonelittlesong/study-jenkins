@@ -5,6 +5,7 @@ docker run -d -p 4000:80 friendlyhello                                  # Same t
 
 docker container ls                                                          # List all running containers
 docker ps                                                                    # List all running containers
+docker ps -a --no-trunc                                          # Don't truncate output（查看完整的 COMMAND）
 docker container ls -a                                       # List all containers, even those not running
 docker container stop <hash>                                     # Gracefully stop the specified container
 docker start [OPTIONS] CONTAINER [CONTAINER...]                     # Start one or more stopped containers
