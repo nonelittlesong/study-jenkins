@@ -37,3 +37,4 @@ docker run username/repository:tag                                             #
 | -t | | 伪 TTY。 |
 | -v | /host/volume:/container/volume | 绑定挂载数据卷。 |
 | --rm | Automatically remove the container when it exits |
+
