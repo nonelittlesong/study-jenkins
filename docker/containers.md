@@ -33,8 +33,8 @@ docker run username/repository:tag                                             #
 | -P | | 将容器的所有端口映射到主机上，随机分配。 |
 | -p | hostport:containerport | 端口映射。主机端口:容器端口。 |
 | -d | | 在后台运行 |
-| -i | | 后台运行依旧保持 stdin 开启。 |
-| -t | | 伪 TTY。 |
+| -i | | 后台运行依旧保持 stdin 开启。通常和 -t 连用。 |
+| -t | | 伪 TTY。通常和 -i 连用。|
 | -v | /host/volume:/container/volume | 绑定挂载数据卷。 |
 | --rm | | Automatically remove the container when it exits |
 
