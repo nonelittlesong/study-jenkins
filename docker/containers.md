@@ -36,5 +36,5 @@ docker run username/repository:tag                                             #
 | -i | | 后台运行依旧保持 stdin 开启。 |
 | -t | | 伪 TTY。 |
 | -v | /host/volume:/container/volume | 绑定挂载数据卷。 |
-| --rm | Automatically remove the container when it exits |
+| --rm | | Automatically remove the container when it exits |
 
