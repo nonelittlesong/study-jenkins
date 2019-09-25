@@ -6,6 +6,10 @@ file watcher, jenkins,
 
 
 ## 一、 安装
+
+>**注意**:  
+jenkins 建议直接安装在宿主机，不用 docker 方式，因为持续集成需要安装各种我们用到的工具，这些工具可能后面根据需要才安装，重启不能让这些工具丢失。比如编译 java 源码需要装 jdk 环境，编译和上传 docker 镜像需要安装 docker 环境，并且还需要提前 docker login 好，不然上传不了。  
+
 ### 1、 [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/) 版
 使用最新的 jenkins 稳定版：  
 ```
