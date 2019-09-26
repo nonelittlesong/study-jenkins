@@ -32,15 +32,15 @@ mkdir config logs data
 ```sh
 #! /bin/bash
 
-sudo docker run -d --rm \
+sudo docker run -d --restart always \
     -p 8088:8088 \
     --name gitlab \
     --env GITLAB_OMNIBUS_CONFIG="external_url 'http://118.24.64.246:8088/'; gitlab_rails['lfs_enabled'] = true;" \
     -v $PWD/config:/etc/gitlab \
     -v $PWD/logs:/var/log/gitlab \
     -v $PWD/data:/var/opt/gitlab \
-    gitlab/gitlab-ee:latest
-EOF
+    -it gitlab/gitlab-ce:latest
+
 ```
 
 ## Troubleshooting
