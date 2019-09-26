@@ -65,7 +65,7 @@ sudo docker exec -it gitlab /bin/bash
 ```
 nano /etc/gitlab/gitlab.rb
 ```
-
+[Configuration options](https://docs.gitlab.com/omnibus/settings/configuration.html)
 
 ## Troubleshooting
 ```diff
