@@ -68,16 +68,15 @@ nano /etc/gitlab/gitlab.rb
 [Configuration options](https://docs.gitlab.com/omnibus/settings/configuration.html)
 
 ## Troubleshooting
+### Gitlab 的 webhook url 不能使用本地链接
 ```diff
 - error:  Requests to the local network are not allowed
 ```
 [Webhooks and insecure internal web services](https://docs.gitlab.com/ee/security/webhooks.html)
 
-```diff
-- ssh 端口问题
-```
-https://blog.csdn.net/wo18237095579/article/details/81105264  
-https://docs.gitlab.com/omnibus/docker/#expose-gitlab-on-different-ports  
+### docker gitlab ssh 端口配置
+- https://blog.csdn.net/wo18237095579/article/details/81105264  
+- https://docs.gitlab.com/omnibus/docker/#expose-gitlab-on-different-ports  
 ```sh
 sudo docker run --detach \
   --hostname gitlab.example.com \
