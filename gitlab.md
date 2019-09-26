@@ -17,6 +17,15 @@
 ! Gitlab 8.3 之后，使用 GitLab Plugin，弃用 GitLab Hook Plugin。  
 ```
 
+## [docker gitlab](https://cloud.tencent.com/developer/article/1326532)
+拉取镜像：  
+```
+docker pull gitlab/gitlab-ce:latest
+```
+创建数据卷：  
+```
+
+
 ## Troubleshooting
 ```diff
 - error:  Requests to the local network are not allowed
