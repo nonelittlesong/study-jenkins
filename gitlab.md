@@ -17,7 +17,7 @@
 ! Gitlab 8.3 之后，使用 GitLab Plugin，弃用 GitLab Hook Plugin。  
 ```
 
-## docker gitlab
+## [docker gitlab](https://docs.gitlab.com/omnibus/docker/)
 ### [参考1](https://cloud.tencent.com/developer/article/1326532)
 准备镜像  
 ```
