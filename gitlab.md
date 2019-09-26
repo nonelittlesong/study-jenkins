@@ -77,3 +77,28 @@ nano /etc/gitlab/gitlab.rb
 - ssh 端口问题
 ```
 https://blog.csdn.net/wo18237095579/article/details/81105264  
+https://docs.gitlab.com/omnibus/docker/#expose-gitlab-on-different-ports  
+```sh
+sudo docker run --detach \
+  --hostname gitlab.example.com \
+  --publish 8929:8929 --publish 2289:22 \
+  --name gitlab \
+  --restart always \
+  --volume /srv/gitlab/config:/etc/gitlab \
+  --volume /srv/gitlab/logs:/var/log/gitlab \
+  --volume /srv/gitlab/data:/var/opt/gitlab \
+  gitlab/gitlab-ce:latest
+```
+gitlab.rb  
+```
+# For HTTP
+external_url "http://gitlab.example.com:8929"
+
+or
+
+# For HTTPS (notice the https)
+external_url "https://gitlab.example.com:8929"
+
+gitlab_rails['gitlab_shell_ssh_port'] = 2289
+```
+
