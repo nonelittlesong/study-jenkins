@@ -17,7 +17,8 @@
 ! Gitlab 8.3 之后，使用 GitLab Plugin，弃用 GitLab Hook Plugin。  
 ```
 
-## [docker gitlab](https://cloud.tencent.com/developer/article/1326532)
+## docker gitlab
+### [参考1](https://cloud.tencent.com/developer/article/1326532)
 准备镜像  
 ```
 docker pull gitlab/gitlab-ce:latest
@@ -42,6 +43,29 @@ sudo docker run -d --restart always \
     -it gitlab/gitlab-ce:latest
 
 ```
+### [参考2](https://blog.csdn.net/u011054333/article/details/61532271)
+用下面的命令启动一个默认配置的Gitlab。如果我们只在本机测试使用的话，将hostname替换为localhost。如果需要让外部系统也能访问的话使用外网IP地址。  
+```sh
+sudo docker run --detach \
+    --hostname gitlab.example.com \
+    --publish 443:443 --publish 80:80 --publish 22:22 \
+    --name gitlab \
+    --restart always \
+    --volume /srv/gitlab/config:/etc/gitlab \
+    --volume /srv/gitlab/logs:/var/log/gitlab \
+    --volume /srv/gitlab/data:/var/opt/gitlab \
+    gitlab/gitlab-ce:latest
+```
+如果这些配置还是不能满足你的需求的时候，还可以直接配置Gitlab。首先进入到Docker环境中。我们使用下面的命令进入Docker环境的bash中。gitlab是刚刚指定的Gitlab名称。
+```
+sudo docker exec -it gitlab /bin/bash
+```
+
+然后就进入了Docker的环境中，我们可以把它当作一个独立的系统来使用。然后编辑/etc/gitlab/gitlab.rb文件，这是Gitlab的全局配置文件。所有选项都可以在这里配置。
+```
+nano /etc/gitlab/gitlab.rb
+```
+
 
 ## Troubleshooting
 ```diff
