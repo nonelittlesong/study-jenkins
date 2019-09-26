@@ -45,7 +45,7 @@ mkdir $CONFIG_FOLDER
 chown 1000 $CONFIG_FOLDER
  
 # Start container
-docker run --restart=always -d -p 49001:8080 \
+docker run --restart always -d -p 49001:8080 \
 -v $CONFIG_FOLDER:/var/jenkins_home:z \
 # -e http_proxy='http://proxy.com:8080' \
 # -e https_proxy='http://proxy.com:8080' \
@@ -54,7 +54,7 @@ docker run --restart=always -d -p 49001:8080 \
 docker logs --follow jenkins
 ```
 
->[--restart=always](https://www.cnblogs.com/kaishirenshi/p/10396446.html): 当 Docker 重启时，容器自动启动。  
+>[--restart always](https://www.cnblogs.com/kaishirenshi/p/10396446.html): 当 Docker 重启时，容器自动启动。  
 >在后面加上 `/bin/bash` 无法正常启动 jenkins。  
 
 
