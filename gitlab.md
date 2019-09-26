@@ -72,3 +72,8 @@ nano /etc/gitlab/gitlab.rb
 - error:  Requests to the local network are not allowed
 ```
 [Webhooks and insecure internal web services](https://docs.gitlab.com/ee/security/webhooks.html)
+
+```diff
+- ssh 端口问题
+```
+https://blog.csdn.net/wo18237095579/article/details/81105264  
