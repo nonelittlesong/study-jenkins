@@ -59,3 +59,13 @@ docker logs --follow jenkins
 
 
 ### 2、 .war 版
+
+
+## 二、 Troubleshooting
+### Tag Push Hook 无效
+原因是：  
+`Tag Push Hook` 传给 jenkins 的 branch 是 `refs/tags/v1.0.1`，与允许的 branches 不一致。  
+解决方案：  
+<kbd>freestyle project</kbd> -> <kbd>Build Triggers</kbd> -> <kbd>Allowed branches</kbd>  
+设置为 Allow all branches to trigger this job。  
+
