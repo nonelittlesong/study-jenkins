@@ -17,3 +17,8 @@
 ! Gitlab 8.3 之后，使用 GitLab Plugin，弃用 GitLab Hook Plugin。  
 ```
 
+## Troubleshooting
+```diff
+- error:  Requests to the local network are not allowed
+```
+[Webhooks and insecure internal web services](https://docs.gitlab.com/ee/security/webhooks.html)
