@@ -101,3 +101,8 @@ external_url "https://gitlab.example.com:8929"
 gitlab_rails['gitlab_shell_ssh_port'] = 2289
 ```
 
+### 权限问题
+需分配额外权限：  
+```sh
+--privileged
+```
