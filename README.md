@@ -61,7 +61,10 @@ docker logs --follow jenkins
 ### 2、 .war 版
 ```sh
 java -jar jenkins.war --httpPort=8080
+// 或
+nohup java -jar jenkins.war --httpPort=8080 &> jenkins.log &
 ```
+- `nohup &` - 终端关闭，程序仍会运行。
 
 ## 二、 Troubleshooting
 ### Tag Push Hook 无效
