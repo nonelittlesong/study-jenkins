@@ -66,7 +66,11 @@ nohup java -jar jenkins.war --httpPort=8080 &> jenkins.log &
 ```
 - `nohup &` - 终端关闭，程序仍会运行。
 
-## 二、 Troubleshooting
+## 二、 [重启](https://stackoverflow.com/questions/8072700/how-to-restart-jenkins-manually)
+- <jenkins_url>/safeRestart  
+- <jenkins_url>/restart  
+
+## Troubleshooting
 ### Tag Push Hook 无效
 原因是：  
 `Tag Push Hook` 传给 jenkins 的 branch 是 `refs/tags/v1.0.1`，与允许的 branches 不一致。  
