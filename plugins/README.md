@@ -21,6 +21,6 @@ SSH Server：
 <kbd>Freestyle project</kbd> > <kbd>Build</kbd>
 - `Name` - 前面取得名字。  
 - `Source files` - 传输到远程目录的文件。  
-- `Remove prefix` - 传输过程过滤掉的目录。  
+- `Remove prefix` - 去掉文件路径的前缀。  
 - `Remote directory` - 前面配置的 `Remote directory` 的相对路径。  
 - `Exec command` - 远程主机执行的脚本。  
