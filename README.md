@@ -83,3 +83,9 @@ nohup java -jar jenkins.war --httpPort=8080 &> jenkins.log &
 - jenkins.plugins.publish_over.BapPublisherException:
 - Failed to add SSH key. Message [invalid privatekey: [B@33e94ff8]
 ```
+jenkins 的 `Publish over SSH` 插件不支持 OPENSSH 格式。  
+生成 PEM 格式的密钥：  
+```sh
+ssh-keygen -t rsa -b 4096 -f jenkinsPEM/jenkins_pem
+```
+`-o` 选项生成 OPENSSH 格式的密钥。  
