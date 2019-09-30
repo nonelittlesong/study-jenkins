@@ -78,3 +78,8 @@ nohup java -jar jenkins.war --httpPort=8080 &> jenkins.log &
 <kbd>freestyle project</kbd> -> <kbd>Build Triggers</kbd> -> <kbd>Allowed branches</kbd>  
 设置为 Allow all branches to trigger this job。  
 
+### ssh invalid privatekey
+```diff
+- jenkins.plugins.publish_over.BapPublisherException:
+- Failed to add SSH key. Message [invalid privatekey: [B@33e94ff8]
+```
