@@ -18,6 +18,11 @@ SSH Server：
 - `Username` - 远程用户名。  
 - `Remote Derictory` - 文件传输到的远程目录。  
 
+复制公钥：  
+```sh
+cat ~/Public/jenkins_pem.pub >> .ssh/authorized_keys
+```
+
 <kbd>Freestyle project</kbd> > <kbd>Build</kbd>
 - `Name` - 前面取得名字。  
 - `Source files` - 传输到远程目录的文件。  
