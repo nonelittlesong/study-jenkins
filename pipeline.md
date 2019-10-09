@@ -2,9 +2,6 @@
 - [玩转 Jenkins Pipeline](https://blog.csdn.net/diantun00/article/details/81075007) by CSDN
 - [Pipeline Docs](https://jenkins.io/doc/book/pipeline/)
 
-Pipeline 流程图：  
-![pipeline-flow.png](https://github.com/nonelittlesong/study-resources/blob/master/images/Jenkins/realworld-pipeline-flow.png)
-
 
 Jenkinsfile (Declarative Pipeline):  
 ```
