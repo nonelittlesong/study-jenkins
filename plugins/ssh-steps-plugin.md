@@ -1,6 +1,7 @@
 - [ssh-steps-plugin github](https://github.com/jenkinsci/ssh-steps-plugin#pipeline-steps)
 
 ## 例子
+### 声明式
 ```
 !groovy
 def getHost(){
@@ -37,7 +38,9 @@ pipeline {
         }
     }
 }
-####################################
+```
+### 脚本式
+```
 node {
   def remote = [:]
   remote.name = 'test'
@@ -114,5 +117,4 @@ node {
         }
     }
 }
-################################
 ```
