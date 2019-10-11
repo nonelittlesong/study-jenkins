@@ -1,5 +1,8 @@
 - [ssh-steps-plugin github](https://github.com/jenkinsci/ssh-steps-plugin#pipeline-steps)
 
+## Troubleshooting
+- 每条 sshCommand 是独立的，所以 `cd` 指令不适用。  
+
 ## 例子
 ### 声明式
 ```
