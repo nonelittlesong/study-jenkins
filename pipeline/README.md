@@ -4,8 +4,26 @@
 
 ## git
 <kbd>Credentials</kbd> > <kbd>Add credentials</kbd>  
-![credential.png](https://github.com/nonelittlesong/study-resources/blob/master/images/Jenkins/credential.png)
+![credential.png](https://github.com/nonelittlesong/study-resources/blob/master/images/Jenkins/credential.png)  
 
+pipeline:  
+```
+pipeline {
+    ...
+    
+    stages {
+        stage('Pull Source Code') {
+            steps {
+                git branch: 'master',
+                    credentialsId: '67039000-9451-493e-93b1-b2f2e784ea12',
+                    url: 'http://127.0.0.1/songwu/jenkins-demo.git'
+            }
+        }
+        ...
+    }
+    ...
+}
+```
 
 ## 语法
 ### 声明式
