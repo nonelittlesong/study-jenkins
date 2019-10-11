@@ -53,6 +53,7 @@ node {
     sshCommand remote: remote, command: "for i in {1..5}; do echo -n \"Loop \$i \"; date ; sleep 1; done"
   }
 }
+// 在远程主机上运行本地脚本
 node {
   def remote = [:]
   remote.name = 'test'
@@ -62,7 +63,7 @@ node {
   remote.allowAnyHosts = true
   stage('Remote SSH') {
     writeFile file: 'abc.sh', text: 'ls -lrt'
-    sshScript remote: remote, script: "abc.sh"
+    sshScript remote: remote, script: "abc.sh" // abc.sh 是本地文件
   }
 }
 node {
