@@ -3,4 +3,7 @@
 - [Pipeline Docs](https://jenkins.io/doc/book/pipeline/)
 
 ## 语法
-### error
+### 声明式
+- `when` - 不能为空。  
+
+### 脚本式
