@@ -3,10 +3,10 @@
 - [Pipeline Docs](https://jenkins.io/doc/book/pipeline/)
 
 ## git
+添加验证：  
 <kbd>Credentials</kbd> > <kbd>Add credentials</kbd>  
-![credential.png](https://github.com/nonelittlesong/study-resources/blob/master/images/Jenkins/credential.png)  
 
-pipeline:  
+编辑 pipeline:  
 ```
 pipeline {
     ...
