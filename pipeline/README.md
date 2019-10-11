@@ -4,6 +4,7 @@
 
 ## 语法
 ### 声明式
+- `currentBuild.result` - 在 stages 中，为 `null`；在 post 中，为 `SUCCESS` 或其他。  
 - `when` - 不能为空。  
 
 ### 脚本式
