@@ -29,5 +29,6 @@ pipeline {
 ### 声明式
 - `currentBuild.result` - 在 stages 中，为 `null`；在 post 中，为 `SUCCESS` 或其他。  
 - `when` - 不能为空。  
+- `input` - 不论在 `stage` 中的位置，一定在 `when` 之前执行。  
 
 ### 脚本式
