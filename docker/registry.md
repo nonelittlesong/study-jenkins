@@ -26,10 +26,25 @@ subjectAltName=IP:10.205.56.200
 ```
 **创建自签名证书**  
 ```sh
-$ mkdir certs
+$ mkdir -p certs
 $ openssl req \
 -newkey rsa:4096 -nodes -sha256 \
 -keyout certs/domain.key \
 -x509 -days 356 \
 -out certs/domain.crt
+```
+**运行 registry**  
+```sh
+$ docker container stop registry
+$ docker container rm registry
+
+$ docker run -d \
+--restart=always \
+--name registry \
+-v "$(pwd)"/certs:/certs \
+-e REGISTRY_HTTP_ADDR=0.0.0.0:443 \
+-e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt \
+-e REGISTRY_HTTP_TLS_KEY=/certs/domain.key \
+-p 443:443 \
+registry:2
 ```
