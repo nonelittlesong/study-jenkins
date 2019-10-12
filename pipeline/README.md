@@ -25,7 +25,9 @@
 
 ### 例子
 - [Pipeline pass parameters to downstream jobs](https://stackoverflow.com/questions/37025175/pipeline-pass-parameters-to-downstream-jobs)
+- [How can I trigger another job from a jenkins pipeline (jenkinsfile) with GitHub Org Plugin?](https://stackoverflow.com/questions/36306883/how-can-i-trigger-another-job-from-a-jenkins-pipeline-jenkinsfile-with-github)
 
+参数：  
 ```
 stage('Starting ART job') {
     build job: 'RunArtInTest',
@@ -35,13 +37,54 @@ stage('Starting ART job') {
               [$class: 'BooleanParameterValue', name: 'parameter_name', value: false],
               [$class: 'BooleanParameterValue', name: 'parameter_name2', value: Boolean.valueOf(update_composer)],
               [$class: 'BooleanParameterValue', name: 'parameter_name3', value: update_composer.toBoolean()]
-          ],
-          
+          ]
+}
 ```
+
+并行触发多个 jobs：  
+```
+stage ('Trigger Builds In Parallel') {
+    steps {
+        // Freestyle build trigger calls a list of jobs
+        // Pipeline build() step only calls one job
+        // To run all three jobs in parallel, we use "parallel" step
+        // https://jenkins.io/doc/pipeline/examples/#jobs-in-parallel
+        parallel (
+            linux: {
+                build job: 'full-build-linux', parameters: [string(name: 'GIT_BRANCH_NAME', value: env.BRANCH_NAME)]
+            },
+            mac: {
+                build job: 'full-build-mac', parameters: [string(name: 'GIT_BRANCH_NAME', value: env.BRANCH_NAME)]
+            },
+            windows: {
+                build job: 'full-build-windows', parameters: [string(name: 'GIT_BRANCH_NAME', value: env.BRANCH_NAME)]
+            },
+            failFast: false
+        )
+    }
+}
+
+// 另一种语法
+stage('Build A and B') {
+    failFast true
+    parallel {
+        stage('Build A') {
+            steps {
+                    build job: "/project/A/${env.BRANCH}", wait: true
+            }
+        }
+        stage('Build B') {
+            steps {
+                    build job: "/project/B/${env.BRANCH}", wait: true
+            }
+        }
+    }
+}
+```
+
 
 ## env
 - [How to list all env properties within jenkins pipeline job?](https://stackoverflow.com/questions/37083285/how-to-list-all-env-properties-within-jenkins-pipeline-job)
-- [How can I trigger another job from a jenkins pipeline (jenkinsfile) with GitHub Org Plugin?](https://stackoverflow.com/questions/36306883/how-can-i-trigger-another-job-from-a-jenkins-pipeline-jenkinsfile-with-github)
 
 ```
 stage('Print Env') {
