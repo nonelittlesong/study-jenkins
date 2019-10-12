@@ -126,8 +126,10 @@ pipeline {
 ```
 
 ## [清理和消息](https://jenkins.io/zh/doc/pipeline/tour/post/)
-- [Slack Notification](https://plugins.jenkins.io/slack)
-- [HipChat](https://plugins.jenkins.io/hipchat)
+- [Slack Notification Plugin](https://plugins.jenkins.io/slack)
+- [Creating a Slack Notifier using Jenkins Pipeline](https://kunzleigh.com/creating-a-slack-notifier-using-jenkins-pipeline/)
+- [Slack 官网](https://slack.com/intl/en-cn/)
+- [HipChat Plugin](https://plugins.jenkins.io/hipchat)
 
 
 ## 语法
