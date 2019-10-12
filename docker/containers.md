@@ -20,6 +20,7 @@ docker inspect [OPTIONS] NAME|ID [NAME|ID...]             # Return low-level inf
 
 docker image ls -a                                                       # List all images on this machine
 docker image rm <image id>                                      # Remove specified image from this machine
+docker rmi <image id>
 docker image rm $(docker image ls -a -q)                             # Remove all images from this machine
 docker login                                       # Log in this CLI session using your Docker credentials
 docker tag <image> username/repository:tag                            # Tag <image> for upload to registry
