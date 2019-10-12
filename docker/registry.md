@@ -21,8 +21,10 @@ $ docker run -d \
 - [局域网内部署 Docker Registry](https://yq.aliyun.com/articles/373068)
 
 **编辑 `/etc/ssl/openssl.cnf`**  
+在\[v3_ca]下面添加：  
 ```
-subjectAltName=IP:10.205.56.200
+[v3_ca]
+subjectAltName = IP:10.205.56.200
 ```
 **创建自签名证书**  
 ```sh
