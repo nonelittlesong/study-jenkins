@@ -3,7 +3,7 @@
 - [Pipeline Docs](https://jenkins.io/doc/book/pipeline/)
 
 ## env
-- [How to list all `env` properties within jenkins pipeline job?](https://stackoverflow.com/questions/37083285/how-to-list-all-env-properties-within-jenkins-pipeline-job)
+- [How to list all env properties within jenkins pipeline job?](https://stackoverflow.com/questions/37083285/how-to-list-all-env-properties-within-jenkins-pipeline-job)
 
 ```
 stage('Print Env') {
