@@ -185,6 +185,8 @@ pipeline {
 ```
 
 ## git
+用于 steps，获取源码。  
+
 添加验证：  
 <kbd>Credentials</kbd> > <kbd>Add credentials</kbd>  
 
