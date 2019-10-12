@@ -19,7 +19,7 @@
   - run  
   - string  
   - text  
-- propagate - 可选。  
+- propagate - 可选。 downstream build 的结果是否影响 step 的结果。   
 - quietPeriod - 可选。  
 - wait - 可选。  
 
