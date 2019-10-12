@@ -23,8 +23,25 @@
 - quietPeriod - 可选。  
 - wait - 可选。  
 
+### 例子
+- [Pipeline pass parameters to downstream jobs](https://stackoverflow.com/questions/37025175/pipeline-pass-parameters-to-downstream-jobs)
+
+```
+stage('Starting ART job') {
+    build job: 'RunArtInTest',
+          parameters: [
+              [$class: 'StringParameterValue', name: 'systemname', value: systemname],
+              string(name: 'complex_param', value: 'prefix-' + String.valueOf(BUILD_NUMBER)),
+              [$class: 'BooleanParameterValue', name: 'parameter_name', value: false],
+              [$class: 'BooleanParameterValue', name: 'parameter_name2', value: Boolean.valueOf(update_composer)],
+              [$class: 'BooleanParameterValue', name: 'parameter_name3', value: update_composer.toBoolean()]
+          ],
+          
+```
+
 ## env
 - [How to list all env properties within jenkins pipeline job?](https://stackoverflow.com/questions/37083285/how-to-list-all-env-properties-within-jenkins-pipeline-job)
+- [How can I trigger another job from a jenkins pipeline (jenkinsfile) with GitHub Org Plugin?](https://stackoverflow.com/questions/36306883/how-can-i-trigger-another-job-from-a-jenkins-pipeline-jenkinsfile-with-github)
 
 ```
 stage('Print Env') {
