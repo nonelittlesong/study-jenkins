@@ -20,7 +20,7 @@ def getHost(){
 pipeline {
     agent {label 'master'}
     environment{
-        def server = ''
+        def server = '' // 不能用作 remote 的值
     }   
     stages {
         stage('init-server'){
