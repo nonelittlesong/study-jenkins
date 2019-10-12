@@ -48,3 +48,12 @@ $ docker run -d \
 -p 443:443 \
 registry:2
 ```
+**在 client 端设置根证书**  
+把 `certs/domain.crt` 复制到需要访问 registry 的主机上。  
+```sh
+# 在需要访问 registry 服务器的客户端创建保存证书的目录
+$ sudo mkdir -p /etc/docker/certs.d/10.205.56.200:443
+# 复制证书到该目录
+# 重命名证书为 ca.crt
+# 重启 docker
+```
