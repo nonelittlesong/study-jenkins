@@ -42,6 +42,7 @@ stage('Starting ART job') {
 ```
 
 并行触发多个 jobs：  
+另外, 通过添加 failFast true， 当其中一个进程失败时，你可以强制所有的 parallel 阶段都被终止。  
 ```
 stage ('Trigger Builds In Parallel') {
     steps {
