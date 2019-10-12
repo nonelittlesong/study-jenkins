@@ -58,19 +58,25 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                echo 'TODO'
+                echo remote            // 'hehe'
+                
                 // 声明式 pipeline 不能直接给变量赋值
                 // def local = "gaga"  // 会报错
+                
                 script {
-                    remote = 'hehehe'  // 局部变量，和 environment 中声明的 remote 无关。
+                    def local = 'gaga' // 局部变量，只能在当前的 script 块访问。
+                    remote = 'hehehe'  // 全局变量，后面的 stage 也能访问。
                 }
-                echo remote            // 'hehehe'
+                
+                echo remote            // 'hehehe' 屏蔽了 env.remote
             }
         }
         stage('Print Env') {
             steps {
-                printEnv()                // 没有 remote
-                sh 'env | sort'           // 包含 remote
+                echo remote               // 'hehehe'
+            
+                printEnv()                // 没有 environment 定义的 remote
+                sh 'env | sort'           // 包含 environment 定义的 remote
                 echo env.remote           // 'hehe'
                 echo "${env.remote}"      // 'hehe'
                 // echo ${env.remote}     // 报错，不能直接使用 ${} 获取变量的值
