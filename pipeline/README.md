@@ -2,6 +2,10 @@
 - [玩转 Jenkins Pipeline](https://blog.csdn.net/diantun00/article/details/81075007) by CSDN
 - [Pipeline Docs](https://jenkins.io/doc/book/pipeline/)
 
+## 配置
+- Discard old builds - 保留旧构建的策略。  
+- Do not allow concurrent builds - 同时只能运行一个 build。  
+
 ## env
 - [How to list all env properties within jenkins pipeline job?](https://stackoverflow.com/questions/37083285/how-to-list-all-env-properties-within-jenkins-pipeline-job)
 
