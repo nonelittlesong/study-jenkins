@@ -18,6 +18,8 @@ $ docker run -d \
 ```
 
 ### 外部访问
+- [局域网内部署 Docker Registry](https://yq.aliyun.com/articles/373068)
+
 **编辑 `/etc/ssl/openssl.cnf`**  
 ```
 subjectAltName=IP:10.205.56.200
