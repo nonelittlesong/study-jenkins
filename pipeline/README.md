@@ -86,6 +86,8 @@ pipeline {
                     printEnv()
                     env.remote = 'gagaga' // 不能改变 env.remote 的值
                     sh 'remote=gagaga'
+                    
+                    remote = 'hehehehe'
                 }
                 echo env.remote           // 'hehe'
             }
@@ -93,6 +95,7 @@ pipeline {
         stage('Change Env') {
             steps {
                 echo env.remote           // 'hehe'
+                echo remote               // 'hehehehe'
             }
         }
     }
