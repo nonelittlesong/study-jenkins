@@ -125,13 +125,6 @@ pipeline {
 }
 ```
 
-## [清理和消息](https://jenkins.io/zh/doc/pipeline/tour/post/)
-- [Slack Notification Plugin](https://plugins.jenkins.io/slack)
-- [Creating a Slack Notifier using Jenkins Pipeline](https://kunzleigh.com/creating-a-slack-notifier-using-jenkins-pipeline/)
-- [Slack 官网](https://slack.com/intl/en-cn/)
-- [HipChat Plugin](https://plugins.jenkins.io/hipchat)
-
-
 ## 语法
 ### 声明式
 - `currentBuild.result` - 在 stages 中，为 `null`；在 post 中，为 `SUCCESS` 或其他。  
