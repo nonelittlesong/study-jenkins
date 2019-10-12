@@ -44,6 +44,55 @@ def printEnv() {
 - JOB_NAME
 - JOB_URL
 
+## environment
+```
+pipeline {
+    agent any
+    
+    environment {
+        // 通过 env 访问。
+        // 如果为 '' 空字符串， env.remote 为 null
+        remote = 'hehe'
+    }
+    
+    stages {
+        stage('Test') {
+            steps {
+                echo 'TODO'
+                // 声明式 pipeline 不能直接给变量赋值
+                // def local = "gaga"  // 会报错
+                script {
+                    remote = 'hehehe'  // 局部变量，和 environment 中声明的 remote 无关。
+                }
+                echo remote            // 'hehehe'
+            }
+        }
+        stage('Print Env') {
+            steps {
+                printEnv()                // 没有 remote
+                sh 'env | sort'           // 包含 remote
+                echo env.remote           // 'hehe'
+                echo "${env.remote}"      // 'hehe'
+                // echo ${env.remote}     // 报错，不能直接使用 ${} 获取变量的值
+                script {
+                    echo env.remote       // 'hehe'
+                    echo "${env.remote}"  // 'hehe'
+                    printEnv()
+                    env.remote = 'gagaga' // 不能改变 env.remote 的值
+                    sh 'remote=gagaga'
+                }
+                echo env.remote           // 'hehe'
+            }
+        }
+        stage('Change Env') {
+            steps {
+                echo env.remote           // 'hehe'
+            }
+        }
+    }
+}
+```
+
 ## git
 添加验证：  
 <kbd>Credentials</kbd> > <kbd>Add credentials</kbd>  
