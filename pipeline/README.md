@@ -6,6 +6,23 @@
 - Discard old builds - 保留旧构建的策略。  
 - Do not allow concurrent builds - 同时只能运行一个 build。  
 
+## build
+用于 steps 中，构建一个 job。  
+- `job` - 使用相对路径或绝对路径。  
+- `parameters` - 可选。  
+  - booleanParam  
+  - credentials  
+  - file  
+  - $class: 'JiraIssueParameterValue'  
+  - $class: 'JiraVersionParameterValue'  
+  - password  
+  - run  
+  - string  
+  - text  
+- propagate - 可选。  
+- quietPeriod - 可选。  
+- wait - 可选。  
+
 ## env
 - [How to list all env properties within jenkins pipeline job?](https://stackoverflow.com/questions/37083285/how-to-list-all-env-properties-within-jenkins-pipeline-job)
 
