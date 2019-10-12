@@ -18,3 +18,16 @@ $ docker run -d \
 ```
 
 ### 外部访问
+**编辑 `/etc/ssl/openssl.cnf`**  
+```
+subjectAltName=IP:10.205.56.200
+```
+**创建自签名证书**  
+```sh
+$ mkdir certs
+$ openssl req \
+-newkey rsa:4096 -nodes -sha256 \
+-keyout certs/domain.key \
+-x509 -days 356 \
+-out certs/domain.crt
+```
