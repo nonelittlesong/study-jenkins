@@ -20,4 +20,16 @@ LABEL <key>=<value> <key>=<value> <key>=<value> ...
 - `RUN <command>` (shell form, the command is run in a shell, which by default is /bin/sh -c on Linux or cmd /S /C on Windows)  
 - `RUN ["executable", "param1", "param2"]` (exec form)  
 
+>不要将 `RUN apt-get update && apt-get install -y` 分开。  
+```
+RUN apt-get update && apt-get install -y \
+    aufs-tools \
+    s3cmd=1.1.* \
+ && rm -rf /var/lib/apt/lists/*
+```
 
+使用管道：  
+```
+RUN set -o pipefail && wget -O - https://some.site | wc -l > /number
+RUN ["/bin/bash", "-c", "set -o pipefail && wget -O - https://some.site | wc -l > /number"]
+```
