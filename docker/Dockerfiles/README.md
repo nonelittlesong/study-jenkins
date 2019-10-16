@@ -33,3 +33,9 @@ RUN apt-get update && apt-get install -y \
 RUN set -o pipefail && wget -O - https://some.site | wc -l > /number
 RUN ["/bin/bash", "-c", "set -o pipefail && wget -O - https://some.site | wc -l > /number"]
 ```
+
+### [CMD](https://docs.docker.com/engine/reference/builder/#cmd)
+- `CMD ["executable","param1","param2"]` (exec form, this is the preferred form)
+- `CMD ["param1","param2"]` (as default parameters to ENTRYPOINT)
+- `CMD command param1 param2` (shell form)
+
