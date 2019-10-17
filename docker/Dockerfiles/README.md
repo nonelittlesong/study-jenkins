@@ -64,3 +64,22 @@ ENV <key>=<value> ...
 ## [VOLUME](https://docs.docker.com/engine/reference/builder/#volume)
 `VOLUME ["/data"]`  
 
+>强烈推荐使用 `VOLUME` 创建镜像中易变的、用户可用的部分。  
+
+## [USER](https://docs.docker.com/engine/reference/builder/#user)
+```
+USER <user>[:<group>]
+USER <UID>[:<GID>]
+```
+
+## [WORKDIR](https://docs.docker.com/engine/reference/builder/#workdir)
+`WORKDIR /path/to/workdir`  
+
+>请使用绝对路径。  
+>使用 `WORKDIR`，别用 `RUN cd … && do-something`。  
+
+## [ONBUILD](https://docs.docker.com/engine/reference/builder/#onbuild)
+`ONBUILD [INSTRUCTION]`  
+
+把 `ONBUILD` 视为传递给子镜像的 Dockerfile 的指令。  
+
