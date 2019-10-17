@@ -39,3 +39,28 @@ RUN ["/bin/bash", "-c", "set -o pipefail && wget -O - https://some.site | wc -l 
 - `CMD ["param1","param2"]` (as default parameters to ENTRYPOINT)
 - `CMD command param1 param2` (shell form)
 
+### [EXPOSE](https://docs.docker.com/engine/reference/builder/#expose)
+`EXPOSE <port> [<port>/<protocol>...]`  
+
+### [ENV](https://docs.docker.com/engine/reference/builder/#env)
+```
+ENV <key> <value>
+ENV <key>=<value> ...
+```
+
+### [ADD or COPY](https://docs.docker.com/engine/reference/builder/#add)
+- `ADD [--chown=<user>:<group>] <src>... <dest>`  
+- `ADD [--chown=<user>:<group>] ["<src>",... "<dest>"]` (this form is required for paths containing whitespace)  
+- `COPY [--chown=<user>:<group>] <src>... <dest>`  
+- `COPY [--chown=<user>:<group>] ["<src>",... "<dest>"]` (this form is required for paths containing whitespace)  
+
+>除非要用 `ADD` 自动对 tar 文件解压，复制文件使用 `COPY`。  
+>不要用 `ADD` 下载远程文件，请用 `curl/wget`。  
+
+## [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint)
+- `ENTRYPOINT ["executable", "param1", "param2"]` (exec form, preferred)  
+- `ENTRYPOINT command param1 param2` (shell form)  
+
+## [VOLUME](https://docs.docker.com/engine/reference/builder/#volume)
+`VOLUME ["/data"]`  
+
