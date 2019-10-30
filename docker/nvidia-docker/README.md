@@ -19,6 +19,8 @@ $ sudo apt-get install -y nvidia-container-toolkit
 重启 `sudo systemctl restart docker`。  
 
 ## [TensorRT](https://github.com/nvidia/TensorRT)
+- [nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04 Dockerfile](https://gitlab.com/nvidia/container-images/cuda/blob/master/dist/ubuntu16.04/9.0/devel/cudnn7/Dockerfile)
+- [nvidia/cuda dockerhub](https://hub.docker.com/r/nvidia/cuda)
 
 ##  Troubleshooting
 运行 `docker run --gpus all nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04 nvidia-smi` 时，报错：  
