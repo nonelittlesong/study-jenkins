@@ -12,3 +12,6 @@
 $ sudo apt-get install -y nvidia-container-toolkit
 ## $ sudo yum install -y nvidia-container-toolkit
 ```
+
+>运行 CUDA 容器只要 NVIDIA 驱动，不必安装 CUDA 套件。  
+
