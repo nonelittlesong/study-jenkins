@@ -18,6 +18,8 @@ $ sudo apt-get install -y nvidia-container-toolkit
 
 重启 `sudo systemctl restart docker`。  
 
+## TensorRT
+
 ##  Troubleshooting
 运行 `docker run --gpus all nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04 nvidia-smi` 时，报错：  
 ```diff
@@ -25,4 +27,4 @@ $ sudo apt-get install -y nvidia-container-toolkit
 ```
 需要重启 docker。  
 
-## TensorRT
+
