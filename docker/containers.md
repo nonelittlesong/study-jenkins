@@ -38,7 +38,7 @@ docker run username/repository:tag                                             #
 | -i | | 后台运行依旧保持 stdin 开启。通常和 -t 连用。 |
 | -t | | 伪 TTY。通常和 -i 连用。|
 | -v | /host/volume:/container/volume | 绑定挂载数据卷。 |
-| --rm | | Automatically remove the container when it exits |
+| --rm | | 退出时自动删除容器 |
 
 - 有 `-i` 无 `-t` - 没有 伪 TTY，没有输出显示在终端。
 - 无 `-i` 有 `-t` - 无法从 stdin 获取输入。
