@@ -5,6 +5,12 @@
 - [Dockerfile reference](https://docs.docker.com/engine/reference/builder/)
 - [Dockerfile最佳实践](https://blog.csdn.net/nklinsirui/article/details/96113636) by CSDN
 
+## 格式
+必须以 `FROM` 开始。  
+`FROM` 之前可以有一个或多个 `ARG`，用于声明 `FROM` 的参数。  
+
+只有以 `#` 开头的行会被视为注释。  
+
 ## 指令
 ### [FROM](https://docs.docker.com/engine/reference/builder/#from)
 设置基础 image。  
