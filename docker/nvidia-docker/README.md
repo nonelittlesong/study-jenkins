@@ -24,3 +24,5 @@ $ sudo apt-get install -y nvidia-container-toolkit
 - docker: Error response from daemon: linux runtime spec devices: could not select device driver "" with capabilities: [[gpu]].
 ```
 需要重启 docker。  
+
+## TensorRT
