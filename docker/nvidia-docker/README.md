@@ -1,6 +1,7 @@
 # Nvidia Docker
 
 - [nvidia-docker github](https://github.com/NVIDIA/nvidia-docker)  
+- [New Docker CLI API Support for NVIDIA GPUs under Docker Engine 19.03.0 Pre-Release](http://collabnix.com/introducing-new-docker-cli-api-support-for-nvidia-gpus-under-docker-engine-19-03-0-beta-release/)
 
 ## 安装 GPU 支持
 安装 Nvidia 驱动和支持的 Docker（>19.03支持GPU）。  
