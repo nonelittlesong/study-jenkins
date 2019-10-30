@@ -2,7 +2,22 @@
 - [docker docs](https://docs.docker.com/get-started/)
 - [krallin/tini](https://github.com/krallin/tini)
 
-## docker 不 sudo
+## 安装
+#### 删除远古版本
+```sh
+sudo apt-get remove docker docker-engine docker.io containerd runc
+```
+如果报告没有安装这些包，说明你的 docker 不是远古版，不必卸载。  
+
+`/var/lib/docker/` 中保存了镜像、容器、卷和网络。  
+
+#### 安装指定版本
+```sh
+apt-cache madison docker-ce
+sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io
+```
+
+## Docker 不 Sudo
 1. 添加 docker 组
    ```sh
    $ sudo groupadd docker
