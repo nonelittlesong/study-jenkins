@@ -16,3 +16,10 @@ $ sudo apt-get install -y nvidia-container-toolkit
 >运行 CUDA 容器只要 NVIDIA 驱动，不必安装 CUDA 套件。  
 
 重启 `sudo systemctl restart docker`。  
+
+##  Troubleshooting
+运行 `docker run --gpus all nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04 nvidia-smi` 时，报错：  
+```diff
+- docker: Error response from daemon: linux runtime spec devices: could not select device driver "" with capabilities: [[gpu]].
+```
+需要重启 docker。  
