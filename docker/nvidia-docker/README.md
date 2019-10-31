@@ -29,6 +29,9 @@ $ sudo apt-get install -y nvidia-container-toolkit
 ```sh
 cat /usr/local/cuda/version.txt
 cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
+## 或者
+find / 'cudnn.h' # /usr/include/cudnn.h
+cat /usr/include/cudnn.h | grep CUDNN_MAJOR -A 2
 ```
 
 ##  Troubleshooting
