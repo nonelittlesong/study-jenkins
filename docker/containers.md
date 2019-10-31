@@ -29,6 +29,7 @@ docker run username/repository:tag                                             #
 ```
 
 ## docker run --help
+语法： `docker run [OPTIONS] IMAGE [COMMAND] [ARG...]`  
 
 | 选项 | 参数 | 描述 |
 | --- | --- | --- |
@@ -39,6 +40,7 @@ docker run username/repository:tag                                             #
 | -t | | 伪 TTY。通常和 -i 连用。|
 | -v | /host/volume:/container/volume | 绑定挂载数据卷。 |
 | --rm | | 退出时自动删除容器 |
+| --name | string | 设置容器名 |
 
 - 有 `-i` 无 `-t` - 没有 伪 TTY，没有输出显示在终端。
 - 无 `-i` 有 `-t` - 无法从 stdin 获取输入。
