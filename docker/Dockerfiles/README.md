@@ -62,6 +62,7 @@ ENV <key>=<value> ...
 
 >除非要用 `ADD` 自动对 tar 文件解压，复制文件使用 `COPY`。  
 >不要用 `ADD` 下载远程文件，请用 `curl/wget`。  
+>当 `COPY` 多个源文件，目标文件必须是目录并且以 `/` 结尾。  
 
 ## [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint)
 - `ENTRYPOINT ["executable", "param1", "param2"]` (exec form, preferred)  
