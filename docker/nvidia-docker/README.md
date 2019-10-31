@@ -24,6 +24,7 @@ $ sudo apt-get install -y nvidia-container-toolkit
 - [nvidia/cuda dockerhub](https://hub.docker.com/r/nvidia/cuda)  
 - [TensorRT NGC](https://ngc.nvidia.com/catalog/containers/nvidia:tensorrt)  
 - [TensorRT 开发入门](https://www.weaf.top/posts/e0818c8b/)  
+- [TensorRT DOCs](https://docs.nvidia.com/deeplearning/sdk/tensorrt-archived/index.html#trt_6)  
 
 **查看 cuda cudnn 版本：**  
 ```sh
