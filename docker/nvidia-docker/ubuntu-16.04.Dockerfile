@@ -33,6 +33,7 @@ RUN cd /usr/local/bin &&\
 
 # Install Cmake
 # 下载失败会重新下载，但不会覆盖失败文件。这导致后面运行的是受损的文件。
+# 解决方案： wget 添加 -O 选项设置输出文件名，实现覆盖。  
 RUN cd /tmp &&\
     wget https://github.com/Kitware/CMake/releases/download/v3.14.4/cmake-3.14.4-Linux-x86_64.sh &&\
     chmod +x cmake-3.14.4-Linux-x86_64.sh &&\
