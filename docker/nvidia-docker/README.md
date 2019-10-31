@@ -25,6 +25,12 @@ $ sudo apt-get install -y nvidia-container-toolkit
 - [TensorRT NGC](https://ngc.nvidia.com/catalog/containers/nvidia:tensorrt)  
 - [TensorRT 开发入门](https://www.weaf.top/posts/e0818c8b/)  
 
+**查看 cuda cudnn 版本：**  
+```sh
+cat /usr/local/cuda/version.txt
+cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
+```
+
 ##  Troubleshooting
 运行 `docker run --gpus all nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04 nvidia-smi` 时，报错：  
 ```diff
