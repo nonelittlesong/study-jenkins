@@ -19,11 +19,11 @@ docker pull jenkins/jenkins:lts
 ```
 docker run -d -p 49001:8080 -v $PWD/jenkins:/var/jenkins_home:z -t jenkins/jenkins:lts
 ```
-- `-d` - 在后台运行
-- `-p` - 端口映射。主机端口:容器端口。
-- `-t` - 伪 TTY。
-- `-v` - 绑定挂载数据卷。
-- `-i` - 后台运行依旧保持 stdin 开启。
+- `-d` - 在后台运行。  
+- `-p` - 端口映射。主机端口:容器端口。  
+- `-t` - 伪 TTY。  
+- `-v` - 绑定挂载数据卷。**会自动创建镜像中不存在的文件夹。**  
+- `-i` - 后台运行依旧保持 stdin 开启。  
 
 ```diff
 - Error: Wrong volume permission.
