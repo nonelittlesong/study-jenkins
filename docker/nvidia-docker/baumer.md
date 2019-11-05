@@ -29,7 +29,7 @@ Processing triggers for mime-support (3.59ubuntu1) ...
 Errors were encountered while processing:
  baumer-gapi-sdk-linux
 ```
-根据错误提示，安装依赖：  
+根据错误提示，安装依赖报错：  
 ```
 Reading package lists... Done
 Building dependency tree       
