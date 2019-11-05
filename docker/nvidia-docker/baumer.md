@@ -1,6 +1,6 @@
 ## Baumer 摄像头 SDK 依赖
 使用 docker 的 ubuntu 镜像安装 baumer sdk 时，会因为缺少依赖而失败：  
-```diff
+```
 Selecting previously unselected package baumer-gapi-sdk-linux.
 (Reading database ... 22818 files and directories currently installed.)
 Preparing to unpack baumer-gapi-sdk-linux-v2.9.2.22969-Ubuntu-16.04-x86-64.deb ...
@@ -57,4 +57,28 @@ The following packages have unmet dependencies:
                          Depends: libxxf86vm1 (>= 1:1.1.4) but it is not going to be installed
  libdrm2 : Depends: libdrm-common (>= 2.4.91-2~16.04.1) but it is not going to be installed
 E: Unmet dependencies. Try 'apt-get -f install' with no packages (or specify a solution).
+```
+
+原因：  
+`baumer-gapi-sdk-linux` 残留，导致依赖安装失败。  
+
+**解决方法：**  
+先卸载 `baumer-gapi-sdk-linux`：  
+```sh
+dpkg -P baumer-gapi-sdk-linux
+```
+再安装依赖：  
+```sh
+apt-get install libdrm2 libgtkglext1 libilmbase12 libopencv-core2.4v5 libopencv-highgui2.4v5 \
+libopencv-imgproc2.4v5 libopenexr22 libpangox-1.0-0 libv4l-0 libv4lconvert0 \
+libx11-xcb1 libxcb-dri2-0 libxcb-dri3-0 libxcb-glx0 libxcb-present0 \
+libxcb-sync1 libxmu6 libxshmfence1 libxt6 libxxf86vm1
+```
+还要解决 `udevadm: command not found` 的问题：  
+```sh
+apt-get install udev
+```
+最后，安装 baumer sdk：  
+```sh
+dpkg -i baumer-gapi-sdk-linux-v2.9.2.22969-Ubuntu-16.04-x86-64.deb
 ```
