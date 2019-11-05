@@ -38,7 +38,7 @@ docker run username/repository:tag                                             #
 | -d | | 在后台运行 |
 | -i | | 后台运行依旧保持 stdin 开启。通常和 -t 连用。 |
 | -t | | 伪 TTY。通常和 -i 连用。|
-| -v | /host/volume:/container/volume | 绑定挂载数据卷。 |
+| -v | /host/volume:/container/volume | 绑定挂载数据卷。冒号左右都会创建不存在的目录。使用 $HOME 而不是 \`pwd\` |
 | --rm | | 退出时自动删除容器 |
 | --name | string | 设置容器名 |
 
