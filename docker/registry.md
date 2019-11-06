@@ -32,7 +32,7 @@ $ mkdir -p certs
 $ openssl req \
 -newkey rsa:4096 -nodes -sha256 \
 -keyout certs/domain.key \
--x509 -days 356 \
+-x509 -days 3560 \
 -out certs/domain.crt
 ```
 **运行 registry**  
