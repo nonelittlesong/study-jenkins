@@ -76,9 +76,14 @@ ENV <key>=<value> ...
 - `ENTRYPOINT command param1 param2` (shell form)  
 
 ## [VOLUME](https://docs.docker.com/engine/reference/builder/#volume)
-`VOLUME ["/data"]`  
+```
+VOLUME ["/data"]
+VOLUME /var/log /var/db
+```
 
 >强烈推荐使用 `VOLUME` 创建镜像中易变的、用户可用的部分。  
+
+
 
 ## [USER](https://docs.docker.com/engine/reference/builder/#user)
 ```
