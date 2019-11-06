@@ -34,6 +34,15 @@ sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> c
 ```
 
 安装 `nvidia-container-toolkit`：  
+添加 repo：  
+```sh
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | \
+  sudo apt-key add -
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | \
+  sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+sudo apt-get update
+```
 ```sh
 $ sudo apt-get install -y nvidia-container-toolkit
 ## $ sudo yum install -y nvidia-container-toolkit
