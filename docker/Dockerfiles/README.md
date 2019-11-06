@@ -11,6 +11,9 @@
 
 只有以 `#` 开头的行会被视为注释。  
 
+## 上下文
+即当前工作目录 \`pwd\` ，与 Dockerfile 的位置无关。  
+
 ## 指令
 ### [FROM](https://docs.docker.com/engine/reference/builder/#from)
 设置基础 image。  
