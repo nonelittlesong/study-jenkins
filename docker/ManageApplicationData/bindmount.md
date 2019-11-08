@@ -58,5 +58,3 @@ docker run -d \
   -v "$(pwd)"/target:/app:ro \
   nginx:latest
 ```
-
-## 
