@@ -80,7 +80,8 @@ ENV <key>=<value> ...
 
 ## [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint)
 - `ENTRYPOINT ["executable", "param1", "param2"]` (exec form, preferred)  
-- `ENTRYPOINT command param1 param2` (shell form)  
+
+
 
 ## [VOLUME](https://docs.docker.com/engine/reference/builder/#volume)
 ```
