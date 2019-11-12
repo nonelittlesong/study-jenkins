@@ -9,6 +9,7 @@ docker ps -a --no-trunc                                          # Don't truncat
 docker container ls -a                                       # List all containers, even those not running
 docker container stop <hash>                                     # Gracefully stop the specified container
 docker start [OPTIONS] CONTAINER [CONTAINER...]                     # Start one or more stopped containers
+docker start -ai CONTAINER                                                                # 交互模式启动容器
 docker container kill <hash>                                   # Force shutdown of the specified container
 docker container rm <hash>                                  # Remove specified container from this machine
 docker container rm $(docker container ls -a -q)                                   # Remove all containers
