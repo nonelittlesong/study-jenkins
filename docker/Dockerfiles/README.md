@@ -47,9 +47,16 @@ RUN ["/bin/bash", "-c", "set -o pipefail && wget -O - https://some.site | wc -l 
 ```
 
 ### [CMD](https://docs.docker.com/engine/reference/builder/#cmd)
-- `CMD ["executable","param1","param2"]` (exec form, this is the preferred form)
-- `CMD ["param1","param2"]` (as default parameters to ENTRYPOINT)
-- `CMD command param1 param2` (shell form)
+
+- `CMD ["executable","param1","param2"]` (推荐的 exec 形式，必须使用双引号)  
+- `CMD ["param1","param2"]` (作为 ENTRYPOINT 的默认参数)  
+
+>多个 CMD 只有最后一个生效。  
+
+>如果 CMD 作为 ENTRYPOINT 的默认参数，二者都必须使用 JSON 数组的形式。  
+
+>exec 形式不会调用 shell，所以不会做变量替换。  
+>如果要 shell 处理，可使用 `CMD [ "sh", "-c", "echo $HOME" ]`。  
 
 ### [EXPOSE](https://docs.docker.com/engine/reference/builder/#expose)
 `EXPOSE <port> [<port>/<protocol>...]`  
