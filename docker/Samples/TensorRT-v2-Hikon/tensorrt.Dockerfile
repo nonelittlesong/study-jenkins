@@ -18,7 +18,8 @@ RUN rm -rf /var/lib/apt/lists/* && mkdir /var/lib/apt/lists/partial &&\
     libopencv-imgproc2.4v5 libopenexr22 libpangox-1.0-0 libv4l-0 libv4lconvert0 \
     libx11-xcb1 libxcb-dri2-0 libxcb-dri3-0 libxcb-glx0 libxcb-present0 \
     libxcb-sync1 libxmu6 libxshmfence1 libxt6 libxxf86vm1 udev \
-    libmodbus-dev libcurl4-openssl-dev
+    libmodbus-dev libcurl4-openssl-dev \
+    libegl1-mesa
 
 RUN cd /usr/local/bin &&\
     ln -s /usr/bin/python3 python &&\
@@ -56,13 +57,7 @@ RUN cd /tmp &&\
     ln -s /tensorrt/include/* /usr/include &&\
     ln -s /tensorrt/targets/x86_64-linux-gnu/lib/* /usr/lib/x86_64-linux-gnu \
 &&\
-    rm -rf /tmp/*
-
-# Install Hikon
-COPY MVS-1.0.0_x86_64.tar.gz /tmp/
-RUN cd /tmp &&\
-    tar zxf MVS_x86_64.tar.gz &&\
-    cd MVS-1.0.0_x86_64 &&\
+    cd /tmp/MVS-1.0.0_x86_64 &&\
     ./setup.sh \
 &&\
     rm -rf /tmp/*
@@ -71,7 +66,8 @@ RUN cd /tmp &&\
 ENV TRT_RELEASE /tensorrt
 ENV TRT_LIB_DIR $TRT_RELEASE/lib
 ENV TRT_SOURCE /workspace/TensorRT
-ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:$TRT_LIB_DIR
+ENV MVS_LIB_DIR /opt/MVS/bin
+ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:$TRT_LIB_DIR:$MVS_LIB_DIR
 WORKDIR /workspace
 
 RUN ["/bin/bash"]
